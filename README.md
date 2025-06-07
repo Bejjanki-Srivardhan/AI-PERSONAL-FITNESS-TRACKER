@@ -1,38 +1,52 @@
-# AI-PERSONAL-FITNESS-TRACKER
+# Personal Fitness Tracker
 
 ## Description
-
-This project develops a Python-based personal fitness tracker that enhances calorie expenditure estimations by incorporating critical physiological data. It moves beyond traditional fitness trackers by integrating heart rate, body temperature, age, and weight, alongside standard activity details. Leveraging established formulas and models from exercise physiology, this application provides more accurate and personalized insights into fitness progress.
-
-## Why This Project Is Useful
-
-Traditional fitness trackers often rely on generalized formulas, leading to inaccurate calorie estimations and limited personalization. This project addresses these limitations by:
-
-* **Improved Accuracy:** Integrating physiological data for more precise calorie expenditure calculations.
-* **Personalized Insights:** Providing comparative analysis against demographic averages, allowing users to contextualize their fitness progress.
-* **Data-Driven Approach:** Empowering users to make informed decisions about their fitness routines based on accurate and personalized data.
-* **Foundation for Advanced Features:** Serving as a modular foundation for future enhancements, including GUI development and real-time data integration.
+Personal Fitness Tracker is a web application built with Streamlit that allows users to track their fitness journey by predicting the number of calories burned during exercise. The app uses machine learning models trained on real-world exercise and calorie datasets to provide personalized calorie burn predictions based on user input parameters such as age, gender, BMI, exercise duration, heart rate, and body temperature.
 
 ## Features
+- User-friendly interface to input personal and exercise parameters.
+- Predicts calories burned using a Random Forest regression model.
+- Visualizes calories burned versus targeted calories with an interactive pie chart.
+- Displays similar exercise data samples based on predicted calorie range.
+- Provides general information comparing user parameters with dataset statistics.
+- Includes progress bars for interactive feedback during prediction and data display.
 
-* **Physiological Data Input:** Records heart rate, body temperature, age, and weight alongside activity details.
-* **Accurate Calorie Estimation:** Utilizes established exercise physiology formulas for precise calculations.
-* **Comparative Analysis:** Compares user data to demographic averages for contextualized insights.
-* **Console-Based Interface:** Simple and efficient command-line interaction.
-* **Structured Data Storage:** Supports future data analysis and expansion.
+## Installation
+1. Clone the repository.
+2. Ensure Python 3.x is installed.
+3. Install required packages:
+   ```
+   pip install streamlit numpy pandas matplotlib seaborn scikit-learn plotly
+   ```
+4. Place `calories.csv` and `exercise.csv` in the project directory.
 
-## Getting Started
+## Usage
+Run the Streamlit app:
+```
+streamlit run app.py
+```
+Use the sidebar to input your personal info, body metrics, and exercise details. The app will display your parameters, predict calories burned, and show visualizations and related data.
 
-### Prerequisites
+## Dataset Description
+- `calories.csv`: Contains user IDs and corresponding calories burned.
+- `exercise.csv`: Contains user IDs and exercise-related features such as gender, age, height, weight, duration, heart rate, and body temperature.
+- The datasets are merged and preprocessed to calculate BMI and prepare features for the prediction model.
 
-* Python 3.7 or later
-* Required Python libraries (install using `pip`):
-    * NumPy (`pip install numpy`)
-    * Pandas (`pip install pandas`)
-    * Scikit-learn (`pip install scikit-learn`)
-    * Streamlit (`pip install streamlit`)
-    * Matplotlib (`pip install matplotlib`)
-    * Seaborn (`pip install seaborn`)
+## Model Details
+- The app uses a Random Forest Regressor trained on the merged dataset.
+- Features used include gender, age, BMI, duration, heart rate, and body temperature.
+- The model predicts the calories burned during exercise based on user inputs.
+
+## Visualization
+- Pie chart showing burned vs remaining calories relative to the user's targeted calories.
+- Data table showing similar exercise records within a close calorie range.
+- Statistical comparisons of user parameters against the dataset.
+
+## License
+This project is licensed under the MIT License.
+
+© 2024 AI-Personal Fitness Tracker. All rights reserved.
+
 
 ## Author
 [Bejjanki Sri Vardhan]
